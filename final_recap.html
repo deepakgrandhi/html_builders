@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recap</title>
+</head>
+
+<style>
+		
+    .green {
+        color: #03BE91;
+        text-decoration: underline;
+        text-decoration-color: #03BE91;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #181920;
+        color: #fff;
+    }
+    
+    header {
+        background-color: #222f2c;
+        color: #fff;
+        text-align: center;
+        padding: 5px 10px;
+        /* margin-bottom: 30px; */
+    }
+    
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        margin-bottom: 10px;
+    }
+    
+    ul {
+        margin-bottom: 10px;
+    }
+    
+    li {
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+    
+    .conclusion {
+        font-style: italic;
+        margin-top: 20px;
+        color: #03BE91;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        .container {
+            width: 80%;
+        }
+    }
+</style>
+<body>
+	<header>
+		<h2 class="green">Let's see how you did</h2>
+	</header>
+	
+	<div class="container">
+		<p><strong><input type="text" id="paragraph-1" value="Congrats! You have successfully completed the 1st stage of candlesticks. In this lesson, we learnt the following:"></strong></p>
+		<ul>
+			<li><input type="text" id="task-1" value="Identifying the 7 elements of a candlestick"></li>
+			<li><input type="text" id="task-2" value="Identifying the 7 elements of a candlestick"></li>
+            <li><input type="text" id="task-3" value="Identifying the 7 elements of a candlestick"></li>
+		</ul>
+		<h4 class="conclusion"><input type="text" id="conclusion-input" value="Great job, now let's move on to the next stage!"></h4>
+	</div>
+
+    <button onclick="myFunction()">Save</button>
+
+    <script>
+        function myFunction() {
+                    const paragraph1 = document.getElementById("paragraph-1").value;
+                    const task1 = document.getElementById("task-1").value;
+                    const task2 = document.getElementById("task-2").value;
+                    const task3 = document.getElementById("task-3").value;
+                    const conclusion = document.getElementById("conclusion-input").value;
+        
+                    const newHtml = `
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Recap</title>
+                        </head>
+                        
+                        <style>
+                            
+                            .green {
+                                color: #03BE91;
+                                text-decoration: underline;
+                                text-decoration-color: #03BE91;
+                            }
+                            body {
+                                margin: 0;
+                                padding: 0;
+                                font-family: Arial, sans-serif;
+                                font-size: 16px;
+                                line-height: 1.5;
+                                background-color: #181920;
+                                color: #fff;
+                            }
+                            
+                            header {
+                                background-color: #222f2c;
+                                color: #fff;
+                                text-align: center;
+                                padding: 5px 10px;
+                                /* margin-bottom: 30px; */
+                            }
+                            
+                            h1 {
+                                font-size: 3rem;
+                                margin-bottom: 20px;
+                            }
+                            
+                            h2 {
+                                font-size: 1.5rem;
+                                margin-bottom: 10px;
+                            }
+                            
+                            p {
+                                margin-bottom: 10px;
+                            }
+                            
+                            ul {
+                                margin-bottom: 10px;
+                            }
+                            
+                            li {
+                                margin-left: 20px;
+                                list-style-type: disc;
+                            }
+                            
+                            .conclusion {
+                                font-style: italic;
+                                margin-top: 20px;
+                                color: #03BE91;
+                            }
+                            
+                            .container {
+                                width: 90%;
+                                max-width: 1200px;
+                                margin: 0 auto;
+                                padding: 0 15px;
+                            }
+                            
+                            @media (min-width: 768px) {
+                                h1 {
+                                    font-size: 5rem;
+                                }
+                                
+                                h2 {
+                                    font-size: 2rem;
+                                }
+                                
+                                .container {
+                                    width: 80%;
+                                }
+                            }
+                        </style>
+                        <body>
+                            <header>
+		                        <h2 class="green">Let's see how you did</h2>
+	                        </header>
+                            
+                            <div class="container">
+                                <p>${paragraph1}</p>
+                            <ul>
+                                <li>${task1}</li>
+                                <li>${task2}</li>
+                                <li>${task3}</li>
+                            </ul>
+                            <h4 class="conclusion">${conclusion}</h4>
+                            </div>
+                        </body>
+                        </html>
+                    `;
+        
+                    const updatedHtmlBlob = new Blob([newHtml], {type: "text/html"});
+        
+                    const downloadLink = document.createElement("a");
+                    downloadLink.href = URL.createObjectURL(updatedHtmlBlob);
+                    downloadLink.download = "updated-recap.html";
+        
+                    downloadLink.click();
+        }
+        </script>
+</body>
+</html>

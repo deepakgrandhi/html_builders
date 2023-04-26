@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Context</title>
+</head>
+
+<style>
+		
+    .green {
+        color: #03BE91;
+        text-decoration: underline;
+        text-decoration-color: #03BE91;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #181920;
+        color: #fff;
+    }
+    
+    header {
+        background-color: #222f2c;
+        color: #fff;
+        text-align: center;
+        padding: 5px 10px;
+        /* margin-bottom: 30px; */
+    }
+    
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        margin-bottom: 10px;
+    }
+    
+    ul {
+        margin-bottom: 10px;
+    }
+    
+    li {
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+    
+    .conclusion {
+        font-style: italic;
+        margin-top: 20px;
+        color: #03BE91;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        .container {
+            width: 80%;
+        }
+    }
+</style>
+<body>
+	<header>
+		<h2 class="green" id="heading"><input type="text" id="header-title" value="Let's apply our learnings"></h2>
+		<h4 id="subheading"><input type="text" id="header-subtitle" value="Welcome to the 1st stage in Candlesticks!"></h4>
+	</header>
+	
+	<div class="container">
+		<p id="intro"><input type="text" id="paragraph-1" value="Candlestick charts are a popular tool used by traders and investors to analyze price movements in financial markets. Each candlestick represents a specific period of time and contains information about the opening, closing, high and low prices for that period."></p>
+		<p style="color:#03BE91"><strong id="task-title"><input type="text" id="paragraph-2" value="Your task for this stage is to:"></strong></p>
+		<ul>
+			<li><input type="text" id="task-1" value="To identify and tap on the 7 elements of a candlestick"></li>
+			<li><input type="text" id="task-2" value="Understand their significance and how they can be used to make trading decisions."></li>
+		</ul>
+		<p id="body"><input type="text" id="paragraph-3" value="The 7 elements of a candlestick include the opening price, closing price, high, low, body, wick, and tail. Each of these elements can provide valuable information about market sentiment and potential price movements."></p>
+		<h4 class="conclusion" id="conclusion"><input type="text" id="conclusion-input" value="Let's keep going and learn more!"></h4>
+	</div>
+
+    <button onclick="myFunction()">Save</button>
+<script>
+function myFunction() {
+            const headerTitle = document.getElementById("header-title").value;
+            const headerSubtitle = document.getElementById("header-subtitle").value;
+            const paragraph1 = document.getElementById("paragraph-1").value;
+            const paragraph2 = document.getElementById("paragraph-2").value;
+            const task1 = document.getElementById("task-1").value;
+            const task2 = document.getElementById("task-2").value;
+            const paragraph3 = document.getElementById("paragraph-3").value;
+            const conclusion = document.getElementById("conclusion-input").value;
+
+            const newHtml = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Context</title>
+                </head>
+                <style>
+                    .green {
+                        color: #03BE91;
+                        text-decoration: underline;
+                        text-decoration-color: #03BE91;
+                    }
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        font-family: Arial, sans-serif;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        background-color: #181920;
+                        color: #fff;
+                    }
+                    
+                    header {
+                        background-color: #222f2c;
+                        color: #fff;
+                        text-align: center;
+                        padding: 5px 10px;
+                        /* margin-bottom: 30px; */
+                    }
+                    
+                    h1 {
+                        font-size: 3rem;
+                        margin-bottom: 20px;
+                    }
+                    
+                    h2 {
+                        font-size: 1.5rem;
+                        margin-bottom: 10px;
+                    }
+                    
+                    p {
+                        margin-bottom: 10px;
+                    }
+                    
+                    ul {
+                        margin-bottom: 10px;
+                    }
+                    
+                    li {
+                        margin-left: 20px;
+                        list-style-type: disc;
+                    }
+                    
+                    .conclusion {
+                        font-style: italic;
+                        margin-top: 20px;
+                        color: #03BE91;
+                    }
+                    
+                    .container {
+                        width: 90%;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 15px;
+                    }
+                    
+                    @media (min-width: 768px) {
+                        h1 {
+                            font-size: 5rem;
+                        }
+                        
+                        h2 {
+                            font-size: 2rem;
+                        }
+                        
+                        .container {
+                            width: 80%;
+                        }
+                    }
+                </style>
+                <body>
+                    <header>
+                    <h2 class="green">${headerTitle}</h2>
+                    <h4>${headerSubtitle}</h4>
+                    </header>
+                    
+                    <div class="container">
+                    <p>${paragraph1}</p>
+                    <p>${paragraph2}</p>
+                    <p style="color:#03BE91"><strong>${task1}</strong></p>
+                    <ul>
+                        <li>${task1}</li>
+                        <li>${task2}</li>
+                    </ul>
+                    <p>${paragraph3}</p>
+                    <h4 class="conclusion">${conclusion}</h4>
+                    </div>
+                </body>
+                </html>
+            `;
+
+            const updatedHtmlBlob = new Blob([newHtml], {type: "text/html"});
+
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(updatedHtmlBlob);
+            downloadLink.download = "updated-file.html";
+
+            downloadLink.click();
+}
+</script>
+</body>
+</html>

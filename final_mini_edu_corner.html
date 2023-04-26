@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mini Edu Corner</title>
+</head>
+
+<style>	
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 90%;
+        max-width: 100%;
+    }
+		.green {
+			color: #03BE91;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			background-color: #181920;
+			color: #fff;
+		}
+		
+		header {
+			background-color: #222f2c;
+			color: #fff;
+			text-align: center;
+			padding: 5px 10px;
+			/* margin-bottom: 30px; */
+		}
+		
+		h1 {
+			font-size: 3rem;
+			margin-bottom: 20px;
+		}
+		
+		h2 {
+			font-size: 1.5rem;
+			margin-bottom: 10px;
+		}
+		
+		p {
+			margin-bottom: 10px;
+		}
+		
+		ul {
+			margin-bottom: 10px;
+		}
+		
+		li {
+			margin-left: 20px;
+			list-style-type: disc;
+		}
+		
+		.conclusion {
+			font-style: italic;
+			margin-top: 20px;
+			color: #03BE91;
+		}
+		
+		.container {
+			width: 90%;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 15px;
+		}
+		
+		@media (min-width: 768px) {
+			h1 {
+				font-size: 5rem;
+			}
+			
+			h2 {
+				font-size: 2rem;
+			}
+			
+			.container {
+				width: 80%;
+			}
+		}
+</style>
+<body>
+
+    <header>
+		<h2 class="green">Let's go through the concept again</h2>
+	</header>
+	
+	<div class="container">
+        <input type="text" id="image-1" value="https://db7ux0oq7lxvd.cloudfront.net/mini_edu_corner_img/">
+        <input type="text" id="image-2" value="https://db7ux0oq7lxvd.cloudfront.net/mini_edu_corner_img/">
+		<p><input type="text" id="paragraph-1" value="That's the way! you have successfully identified the parent candle and the child candle and have judged where the stock is headed"></p>
+		<h4 class="conclusion"><input type="text" id="conclusion-input" value="We should rehearse this again to strengthen our muscle memory and perfect this method"></h4>
+	</div>
+
+    <button onclick="myFunction()">Save</button>
+
+    <script>
+        function myFunction() {
+                    const image1 = document.getElementById("image-1").value;
+                    const image2 = document.getElementById("image-2").value;
+                    const paragraph = document.getElementById("paragraph-1").value;
+                    const conclusion = document.getElementById("conclusion-input").value;
+        
+                    const newHtml = `
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Mini Edu Corner</title>
+                        </head>
+                        
+                        <style>	
+                            .center {
+                                display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                margin-top: 30px;
+                                margin-bottom: 10px;
+                                width: 90%;
+                                max-width: 100%;
+                            }
+                                .green {
+                                    color: #03BE91;
+                                }
+                                body {
+                                    margin: 0;
+                                    padding: 0;
+                                    font-family: Arial, sans-serif;
+                                    font-size: 16px;
+                                    line-height: 1.5;
+                                    background-color: #181920;
+                                    color: #fff;
+                                }
+                                
+                                header {
+                                    background-color: #222f2c;
+                                    color: #fff;
+                                    text-align: center;
+                                    padding: 5px 10px;
+                                    /* margin-bottom: 30px; */
+                                }
+                                
+                                h1 {
+                                    font-size: 3rem;
+                                    margin-bottom: 20px;
+                                }
+                                
+                                h2 {
+                                    font-size: 1.5rem;
+                                    margin-bottom: 10px;
+                                }
+                                
+                                p {
+                                    margin-bottom: 10px;
+                                }
+                                
+                                ul {
+                                    margin-bottom: 10px;
+                                }
+                                
+                                li {
+                                    margin-left: 20px;
+                                    list-style-type: disc;
+                                }
+                                
+                                .conclusion {
+                                    font-style: italic;
+                                    margin-top: 20px;
+                                    color: #03BE91;
+                                }
+                                
+                                .container {
+                                    width: 90%;
+                                    max-width: 1200px;
+                                    margin: 0 auto;
+                                    padding: 0 15px;
+                                }
+                                
+                                @media (min-width: 768px) {
+                                    h1 {
+                                        font-size: 5rem;
+                                    }
+                                    
+                                    h2 {
+                                        font-size: 2rem;
+                                    }
+                                    
+                                    .container {
+                                        width: 80%;
+                                    }
+                                }
+                        </style>
+                        <body>
+                            <header>
+                                <h2 class="green">Let's go through the concept again</h2>
+                            </header>
+
+                            <div class="container">
+                                <img class="center" src="${image1}"/>
+                                <img class="center" src="${image2}"/>
+                                <p>${paragraph}</p>
+                                <h4 class="conclusion">${conclusion}</h4>
+                            </div>
+                        
+                        </body>
+                        </html>
+                    `;
+        
+                    const updatedHtmlBlob = new Blob([newHtml], {type: "text/html"});
+        
+                    const downloadLink = document.createElement("a");
+                    downloadLink.href = URL.createObjectURL(updatedHtmlBlob);
+                    downloadLink.download = "updated-mini_edu_corner.html";
+        
+                    downloadLink.click();
+        }
+    </script>
+</body>
+</html>

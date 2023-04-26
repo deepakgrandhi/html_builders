@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+<style>
+  * {
+    box-sizing: border-box;
+    background-color: #181920;
+    color: white;
+  }
+  .main {
+    float: left;
+    width: 60%;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  .right {
+    float: left;
+    width: 20%;
+    padding: 10px 8px;
+    margin-top: 7px;
+  }
+  
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-width: 100%;
+  }
+  
+  .box{
+      background-color: #27272f;
+      padding: 1px 6px 1px 5px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      width: 100%;
+      box-sizing: border-box;
+  }
+  
+  .box > *{
+      background-color: inherit;
+  }
+  
+  @media only screen and (max-width:800px) {
+    .main {
+      width: 80%;
+      padding: 0 10px;
+    }
+    .right {
+      width: 100%;
+    }
+    .center {
+      width: 70%;
+    }
+  }
+  @media only screen and (max-width:500px) {
+    .main, .right {
+      width: 100%;
+    }
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .box {
+      width: 48%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .box > p {
+    color: #03BE91;
+  }
+  
+  .header {
+    color: #03BE91;
+    text-decoration: underline;
+    text-decoration-color: #03BE91;
+  }
+  
+  </style>
+</head>
+<body style="font-family:Verdana;">
+
+<div style="overflow:auto">
+  <div class="main">
+    <p>Let's put it all together..</p>
+    <h3 class="header">Welcome to Case Studies</h3>
+    <p><input type="text" id="paragraph" value="Stocks function in repeating patterns, so it only makes sense if we put our analysis to test using real market scenarios... Right?"></p>
+    <input type="text" id="logo" value="https://logothunderbird.s3.ap-south-1.amazonaws.com/">
+  </div>
+
+  <div class="right">
+    <div class="box-container">
+      <div class="box">
+        <p>🏭 Stock:</p>
+        <h5><input type="text" id="stock" value="Hindustan Unilever (HINDUNILVR)"></h5>
+      </div>
+      
+      <div class="box">
+        <p>⌛️ Time-frame:</p>
+        <h4><input type="text" id="timeframe" value="Daily"></h4>
+      </div>
+
+      <div class="box">
+        <p>🕦 From:</p>
+        <h4><input type="text" id="from" value="20 May 2022"></h4>
+      </div>
+
+      <div class="box">
+        <p>🕝 To:</p>
+        <h4><input type="text" id="to" value="30 May 2022"></h4>
+      </div>
+    </div>    
+  </div>
+
+  <button onclick="myFunction()">Save</button>
+
+  <script>
+    function myFunction() {
+                const paragraph = document.getElementById("paragraph").value;
+                const stockLogo = document.getElementById("logo").value;
+                const stock = document.getElementById("stock").value;
+                const timeframe = document.getElementById("timeframe").value;
+                const from = document.getElementById("from").value;
+                const to = document.getElementById("to").value;
+    
+                const newHtml = `
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Mini Edu Corner</title>
+                        <style>
+                          * {
+                            box-sizing: border-box;
+                            background-color: #181920;
+                            color: white;
+                          }
+                          .main {
+                            float: left;
+                            width: 60%;
+                            padding: 0 20px;
+                            overflow: hidden;
+                          }
+                          .right {
+                            float: left;
+                            width: 20%;
+                            padding: 10px 8px;
+                            margin-top: 7px;
+                          }
+
+                          .center {
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            width: 70%;
+                            max-width: 100%;
+                          }
+
+                          .box{
+                              background-color: #27272f;
+                              padding: 1px 6px 1px 5px;
+                              border-radius: 4px;
+                              margin-bottom: 8px;
+                              width: 100%;
+                              box-sizing: border-box;
+                          }
+
+                          .box > *{
+                              background-color: inherit;
+                          }
+
+                          @media only screen and (max-width:800px) {
+                            .main {
+                              width: 80%;
+                              padding: 0 10px;
+                            }
+                            .right {
+                              width: 100%;
+                            }
+                            .center {
+                              width: 70%;
+                            }
+                          }
+                          @media only screen and (max-width:500px) {
+                            .main, .right {
+                              width: 100%;
+                            }
+                            .box-container {
+                              display: flex;
+                              flex-wrap: wrap;
+                              justify-content: space-between;
+                            }
+                            .box {
+                              width: 48%;
+                              margin-bottom: 10px;
+                            }
+                          }
+
+                          .box > p {
+                            color: #03BE91;
+                          }
+
+                          .header {
+                            color: #03BE91;
+                            text-decoration: underline;
+                            text-decoration-color: #03BE91;
+                          }
+
+                          </style>
+                    </head>
+          
+                    <body  style="font-family:Verdana;">
+                      <div style="overflow:auto">
+                        <div class="main">
+                          <p>Let's put it all together..</p>
+                          <h3 class="header">Welcome to Case Studies</h3>
+                          <p>${paragraph}</p>
+                          <img src="${stockLogo}" class="center">
+                        </div>
+
+                        <div class="right">
+                          <div class="box-container">
+                            <div class="box">
+                              <p>🏭 Stock:</p>
+                              <h5>${stock}</h5>
+                            </div>
+                            
+                            <div class="box">
+                              <p>⌛️ Time-frame:</p>
+                              <h4>${timeframe}</h4>
+                            </div>
+
+                            <div class="box">
+                              <p>🕦 From:</p>
+                              <h4>${from}</h4>
+                            </div>
+
+                            <div class="box">
+                              <p>🕝 To:</p>
+                              <h4>${to}</h4>
+                            </div>
+                          </div>  
+                        </div>  
+                      </div>
+                    
+                    </body>
+                    </html>
+                `;
+    
+                const updatedHtmlBlob = new Blob([newHtml], {type: "text/html"});
+    
+                const downloadLink = document.createElement("a");
+                downloadLink.href = URL.createObjectURL(updatedHtmlBlob);
+                downloadLink.download = "updated-mini_edu_corner.html";
+    
+                downloadLink.click();
+    }
+</script>
+</div>
+</body>
+</html>
